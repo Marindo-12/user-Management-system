@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.first {
+  background: #d9d9d9;
+  background: linear-gradient(299deg, rgba(217, 217, 217, 1) 14%, rgba(84, 104, 120, 1) 26%);
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+#user-form {
+  display: grid;
+  place-items: center;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.input {
+  padding: 12px;
+  width: clamp(200px, 50%, 600px);
+  border: none;
+  border-radius: 7px;
+}
+
+#submit-btn {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #4c4b4b;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 0.5em;
+  background: #bdbdbd;
+  border: 1px solid #e8e8e8;
+  margin-top: 20px;
+}
+
+.table-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 700px;
+  overflow-x: auto;
+  padding: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #333;
+}
+
+thead {
+  background: linear-gradient(299deg, rgba(217, 217, 217, 1) 14%, rgba(84, 104, 120, 1) 26%);
+  color: white;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr:hover {
+  background-color: #e8eff5;
+}
+
+tbody td {
+  padding: 10px 12px;
+}
+
+td:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* espace entre les deux boutons */
+}
+
+.edit,
+.delete {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  min-width: 80px;
+  text-align: center;
+}
+
+.edit {
+  background-color: #f5b041;
+  color: white;
+}
+
+.edit:hover {
+  background-color: #d68910;
+}
+
+.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 12px;
+  }
+  thead th, tbody td {
+    padding: 8px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 2000;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background: white;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+.modal-box.success {
+  border-top: 5px solid #2ecc71;
+}
+
+.modal-box.error {
+  border-top: 5px solid #e74c3c;
+}
+
+.modal-box.info {
+  border-top: 5px solid #3498db;
+}
+
