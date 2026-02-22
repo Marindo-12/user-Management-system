@@ -58,7 +58,7 @@ user-Management-system/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Marindo-12/user-Management-system
 cd user-Management-system
 ```
 
